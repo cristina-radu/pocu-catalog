@@ -1,0 +1,26 @@
+#spring related properties:
+server:
+  port : 8081       #the port on which the app starts
+  servlet:
+    context-path: /catalog    #root of all endpoints
+
+#database - see more: https://www.baeldung.com/spring-boot-h2-database
+spring:
+  datasource:
+    url: jdbc:h2:mem:catalog
+    driverClassName: org.h2.Driver
+    username: user
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2-console  #http://localhost:8081/catalog/h2-console
+
+#custom properties:
+insert.test.data: true
